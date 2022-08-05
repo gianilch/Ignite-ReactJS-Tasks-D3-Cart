@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { createContext, ReactNode, useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import { api } from '../services/api';
@@ -34,7 +35,14 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
   const addProduct = async (productId: number) => {
     try {
-      // TODO
+      console.log(productId)
+
+      let product 
+
+        await axios(`http://localhost:3333/products/${productId}`)
+        .then(response => product = response.data)
+
+          
     } catch {
       // TODO
     }

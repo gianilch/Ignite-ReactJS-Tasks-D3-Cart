@@ -41,13 +41,13 @@ const Home = (): JSX.Element => {
   }, []);
 
   function handleAddProduct(id: number) {
-    // TODO
+    addProduct(id)
   }
 
   return (
     <ProductList>
       {products.map((product) => (
-        <li>
+        <li key={product.id}>
           <img src={product.image} alt="Tênis de Caminhada Leve Confortável" />
           <strong>{product.title}</strong>
           <span>{formatPrice(product.price)}</span>
